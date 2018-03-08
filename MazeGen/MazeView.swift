@@ -2,97 +2,96 @@
 //  MazeView.swift
 //  MazeGen
 //
-//  Created by Ido Mizrachi on 1/19/18.
+//  Created by Ido Mizrachi on 2/17/18.
 //  Copyright © 2018 Ido Mizrachi. All rights reserved.
 //
 
 import UIKit
-
-class MazeView: UIView {
-
+class MazeView: UIView, MazeModelDelegate {
     private let model: MazeModel
-    var cellViews: [[Cell]] = []
     
-    init(model: MazeModel, frame: CGRect) {
+    init(model: MazeModel) {
         self.model = model
-//        let rows = self.model.cells.count
-//        self.cellViews = []
-//        for x in 0..<rows {
-//            let row = self.model.cells[x]
-//            var cellViewsRow:[Cell] = []
-//            let columns = row.count
-//            for y in 0..<columns {
-//                let cellFrame = CGRect(x: x * Int(frame.size.width) / rows, y: y * Int(frame.size.height) / columns, width: Int(frame.size.width) / rows, height: Int(frame.size.height) / columns)
-//                let cellView = Cell(model: row[y], frame: cellFrame)
-//                cellViewsRow.append(cellView)
-//            }
-//            self.cellViews.append(cellViewsRow)
-//        }
-        super.init(frame: frame)
-        self.backgroundColor = UIColor.white
-//        for x in 0..<self.cellViews.count {
-//            let row = self.cellViews[x]
-//            let columns = row.count
-//            for y in 0..<columns {
-//                self.addSubview(row[y])
-//            }
-//        }
-        
+        super.init(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func generate() {
-        guard self.model.isRunning == false else {
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
-        clear()
-        let rows = self.model.cells.count
-        for x in 0..<rows {
-            let row = self.model.cells[x]
-            var cellViewsRow:[Cell] = []
-            let columns = row.count
-            for y in 0..<columns {
-                let cellFrame = CGRect(x: x * Int(frame.size.width) / rows, y: y * Int(frame.size.height) / columns, width: Int(frame.size.width) / rows, height: Int(frame.size.height) / columns)
-                let cellView = Cell(model: row[y], frame: cellFrame)
-                cellViewsRow.append(cellView)
+        context.clear(self.bounds)
+        context.setLineWidth(1)
+        context.setStrokeColor(UIColor.gray.cgColor)
+        for columns in self.model.cells {
+            for cell in columns {
+                drawCell(cell: cell, context: context)
             }
-            self.cellViews.append(cellViewsRow)
         }
-        for x in 0..<self.cellViews.count {
-            let row = self.cellViews[x]
-            let columns = row.count
-            for y in 0..<columns {
-                self.addSubview(row[y])
-            }
+    }
+    
+    public func generate() {
+        guard self.model.isRunning == false else {
+            return
         }
         self.model.generate()
     }
     
-    private func clear() {
-        for x in 0..<self.cellViews.count {
-            let row = self.cellViews[x]
-            let columns = row.count
-            for y in 0..<columns {
-                row[y].removeFromSuperview()
-            }
+    
+    private func drawCell(cell: CellModel, context: CGContext) {
+        let width = self.model.diameter
+        let height = self.model.diameter
+        let x = CGFloat(cell.point.x) * width //+ 30
+        let y = CGFloat(cell.point.y) * height //+ 30
+        
+        context.move(to: CGPoint(x: x, y: y))
+        var point = CGPoint(x: x + width, y: y)
+        if (cell.walls.contains(.Top)) {
+            context.addLine(to: point)
+            context.strokePath()
         }
-        self.cellViews.removeAll()
+        context.move(to: point)
+        point = CGPoint(x: x + width, y: y + height)
+        if (cell.walls.contains(.Right)) {
+            context.addLine(to: point)
+            context.strokePath()
+        }
+        context.move(to: point)
+        point = CGPoint(x: x, y: y + height)
+        if (cell.walls.contains(.Bottom)) {
+            context.addLine(to: point)
+            context.strokePath()
+        }
+        context.move(to: point)
+        point = CGPoint(x: x, y: y)
+        if (cell.walls.contains(.Left)) {
+            context.addLine(to: point)
+            context.strokePath()
+        }
+        context.move(to: point)
+        
+        /*
+        var rect2 = rect
+        rect2.origin.x += 2
+        rect2.size.width -= 4
+        rect2.origin.y += 2
+        rect2.size.height -= 4
+        let fillPath: UIBezierPath = UIBezierPath(rect: rect2)
+        if self.model.current {
+            UIColor.green.setFill()
+            //        } else if self.model.visited {
+            //            UIColor.green.setFill()
+        } else {
+            UIColor.clear.setFill()
+        }
+        fillPath.fill()
+ */
     }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        context.addRect(rect)
-        
+    func mazeModelDidUpdate() {
+        self.setNeedsDisplay()
     }
- 
-
 }

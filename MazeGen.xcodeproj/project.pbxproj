@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9937CC842038B973000B7DB3 /* MazeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9937CC832038B973000B7DB3 /* MazeView.swift */; };
+		9953F5B820322C9200220E5D /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953F5B720322C9200220E5D /* Toolbar.swift */; };
+		9953F5BA20322D5D00220E5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953F5B920322D5D00220E5D /* ViewController.swift */; };
 		998AF5B12010EE85002E6649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5B02010EE85002E6649 /* AppDelegate.swift */; };
-		998AF5B32010EE85002E6649 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5B22010EE85002E6649 /* ViewController.swift */; };
+		998AF5B32010EE85002E6649 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5B22010EE85002E6649 /* ViewController2.swift */; };
 		998AF5B62010EE85002E6649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998AF5B42010EE85002E6649 /* Main.storyboard */; };
 		998AF5B82010EE85002E6649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998AF5B72010EE85002E6649 /* Assets.xcassets */; };
 		998AF5BB2010EE85002E6649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 998AF5B92010EE85002E6649 /* LaunchScreen.storyboard */; };
@@ -17,7 +20,9 @@
 		998AF5DF2010EE92002E6649 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5DE2010EE92002E6649 /* Cell.swift */; };
 		998AF5E120122FFE002E6649 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5E020122FFE002E6649 /* CellModel.swift */; };
 		998AF5E3201247B9002E6649 /* MazeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5E2201247B9002E6649 /* MazeModel.swift */; };
-		998AF5E5201247C5002E6649 /* MazeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5E4201247C5002E6649 /* MazeView.swift */; };
+		998AF5E5201247C5002E6649 /* MazeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AF5E4201247C5002E6649 /* MazeView2.swift */; };
+		99EFE1572021939C0062397E /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EFE1562021939C0062397E /* Slider.swift */; };
+		99EFE159202193BC0062397E /* MazeConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EFE158202193BC0062397E /* MazeConfigurationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9937CC832038B973000B7DB3 /* MazeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeView.swift; sourceTree = "<group>"; };
+		9953F5B720322C9200220E5D /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		9953F5B920322D5D00220E5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		998AF5AD2010EE85002E6649 /* MazeGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MazeGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998AF5B02010EE85002E6649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		998AF5B22010EE85002E6649 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		998AF5B22010EE85002E6649 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		998AF5B52010EE85002E6649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		998AF5B72010EE85002E6649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		998AF5BA2010EE85002E6649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +62,9 @@
 		998AF5DE2010EE92002E6649 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		998AF5E020122FFE002E6649 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		998AF5E2201247B9002E6649 /* MazeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeModel.swift; sourceTree = "<group>"; };
-		998AF5E4201247C5002E6649 /* MazeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeView.swift; sourceTree = "<group>"; };
+		998AF5E4201247C5002E6649 /* MazeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeView2.swift; sourceTree = "<group>"; };
+		99EFE1562021939C0062397E /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		99EFE158202193BC0062397E /* MazeConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazeConfigurationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				998AF5B02010EE85002E6649 /* AppDelegate.swift */,
-				998AF5B22010EE85002E6649 /* ViewController.swift */,
+				998AF5B22010EE85002E6649 /* ViewController2.swift */,
 				998AF5B42010EE85002E6649 /* Main.storyboard */,
 				998AF5B72010EE85002E6649 /* Assets.xcassets */,
 				998AF5B92010EE85002E6649 /* LaunchScreen.storyboard */,
@@ -114,7 +124,12 @@
 				998AF5DE2010EE92002E6649 /* Cell.swift */,
 				998AF5E020122FFE002E6649 /* CellModel.swift */,
 				998AF5E2201247B9002E6649 /* MazeModel.swift */,
-				998AF5E4201247C5002E6649 /* MazeView.swift */,
+				998AF5E4201247C5002E6649 /* MazeView2.swift */,
+				99EFE1562021939C0062397E /* Slider.swift */,
+				99EFE158202193BC0062397E /* MazeConfigurationView.swift */,
+				9953F5B720322C9200220E5D /* Toolbar.swift */,
+				9953F5B920322D5D00220E5D /* ViewController.swift */,
+				9937CC832038B973000B7DB3 /* MazeView.swift */,
 			);
 			path = MazeGen;
 			sourceTree = "<group>";
@@ -271,12 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				998AF5B32010EE85002E6649 /* ViewController.swift in Sources */,
+				9953F5BA20322D5D00220E5D /* ViewController.swift in Sources */,
+				9953F5B820322C9200220E5D /* Toolbar.swift in Sources */,
+				9937CC842038B973000B7DB3 /* MazeView.swift in Sources */,
+				998AF5B32010EE85002E6649 /* ViewController2.swift in Sources */,
 				998AF5E3201247B9002E6649 /* MazeModel.swift in Sources */,
 				998AF5B12010EE85002E6649 /* AppDelegate.swift in Sources */,
-				998AF5E5201247C5002E6649 /* MazeView.swift in Sources */,
+				998AF5E5201247C5002E6649 /* MazeView2.swift in Sources */,
 				998AF5DF2010EE92002E6649 /* Cell.swift in Sources */,
 				998AF5E120122FFE002E6649 /* CellModel.swift in Sources */,
+				99EFE159202193BC0062397E /* MazeConfigurationView.swift in Sources */,
+				99EFE1572021939C0062397E /* Slider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
