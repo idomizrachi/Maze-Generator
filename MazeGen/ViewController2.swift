@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController2: UIViewController {
     
     
 //    lazy var scrollView: UIScrollView = {
@@ -24,10 +24,10 @@ class ViewController: UIViewController {
         return button
     }()
     
-    lazy var mazeView: MazeView = {
-        let mazeModel: MazeModel = MazeModel(width: 5, height: 8)
+    lazy var mazeView: MazeView2 = {
+        let mazeModel: MazeModel = MazeModel(numberOfRows: 10, numberOfColumns: 10)
         let frame = CGRect(x: 20, y: 200, width: 300, height: 300)
-        let mazeView: MazeView = MazeView(model: mazeModel, frame: frame)
+        let mazeView: MazeView2 = MazeView2(model: mazeModel, frame: frame)
         return mazeView
     }()
 
